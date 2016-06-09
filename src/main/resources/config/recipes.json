@@ -1,0 +1,54 @@
+[
+    {
+        "out": "!DNA_ITEM|64",
+        "shapeless": false,
+        "grid": [
+            " A ",
+            " A ",
+            "AAA"
+        ],
+        "items": {
+            "A": "@bed"
+        }
+    },
+    {
+        "out": "!DNA_ITEM",
+        "shapeless": true,
+        "items": {
+            "A": "@bed"
+        }
+    },
+    {
+        "out": "!DNA_ITEM|9",
+        "shapeless": true,
+        "items": {
+            "A": "#DNA_BLOCK"
+        }
+    },
+    {
+        "out": "@bed|64",
+        "shapeless": true,
+        "items": {
+            "A": "!DNA_ITEM"
+        }
+    },
+    {
+        "out": "@apple|2",
+        "shapeless": true,
+        "items": {
+            "A": "!DNA_ITEM",
+            "B": "!DNA_ITEM"
+        }
+    },
+    {
+        "out": "#DNA_BLOCK",
+        "grid": [
+            "III",
+            "III",
+            "III"
+        ],
+        "items": {
+            "I": "!DNA_ITEM"
+        }
+    }
+]

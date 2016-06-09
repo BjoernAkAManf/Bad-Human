@@ -1,0 +1,45 @@
+/**
+ * Manages Forge / Minecraft related contexts.
+ *
+ * Current Features:
+ * - It will preprocess the mcmod.info
+ * - It will generate the BuildConfig
+ * - It will set the archive base name
+ */
+
+apply plugin: 'forge' // This is a forge Plugin
+apply plugin: 'config' // expand dotted properties into nested objects
+apply plugin: 'de.fuerstenau.buildconfig' // Generate BuildConfig
+
+sourceCompatibility = property('java.version')
+targetCompatibility = property('java.version')
+
+minecraft {
+    version = property('minecraft.version')
+}
+
+buildConfig {
+    clsName = property('minecraft.name')
+    buildConfigField 'String', 'MODID', config.minecraft.id
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+
+        expand(project.properties)
+    }
+
+    // copy everything else, thats not the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+
+    eachFile { f -> 
+        def modid = project.property('minecraft.id')
+        f.path = f.path.replace('assets', 'assets' + File.separator + modid)
+        includeEmptyDirs  = false
+    }
+}
+
+archivesBaseName = property('minecraft.id')

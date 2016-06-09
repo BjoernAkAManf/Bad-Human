@@ -1,0 +1,14 @@
+{
+    "modListVersion": 2,
+    "modList": [{
+        "modid": "${config.minecraft.id}",
+        "name": "${config.minecraft.name}",
+        "description": "${config.minecraft.description}",
+        "version": "${version}",
+        "mcversion": "${config.minecraft.version}",
+        "url": "http://mcseu.link",
+        "authorList": ["manf", "Contributors"],
+        "credits": "Credits are given in the Contributor Block.",
+        "logoFile": "logo.png"
+    }]
+}
